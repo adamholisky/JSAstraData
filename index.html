@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<script type="text/javascript" src="JSAstraData.js"></script>
+	</head>
+	<body>
+		JSAstraData.js example output.<br /><br />
+		Open the JavaScript console. Example outputs are in there.
+
+		<script>
+			var myList = new AstraList();
+
+			myList.append( "Element Alpha" );
+			myList.append( "Element Omega" );
+
+			myList.forEach( function( theString ) {
+				console.log( "Callbacked with: " + theString );
+			});
+
+			var myQueue = new AstraQueue();
+
+			myQueue.enqueue( "Alpha" );
+			myQueue.enqueue( "Beta" );
+			myQueue.enqueue( "Delta" );
+
+			myQueue.dequeueForEach( function( theString ) {
+				console.log( "Dequeued off: " + theString );
+			});
+
+			var myStack = new AstraStack();
+
+			myStack.push( "Dirty Dish 1" );
+			myStack.push( "Dirty Dish 2" );
+			myStack.push( "Dirty Dish 3" );
+
+			myStack.popForEach( function( theString ) {
+				console.log( "Popped off: " + theString );
+			});	
+
+			var myDict = new AstraDictionary();
+
+			myDict.add( "Husband", "Adam" );
+			myDict.add( "Wife", "Kaite" );
+			myDict.add( "Cat", "Max" );
+
+			myDict.forEach( function( key, value ) {
+				console.log( "Callbacked " + key + " with: " + value );
+			});
+		</script>
+	</body>
+</html>
